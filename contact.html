@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mangalam Hospital & Trauma Centre | Patna</title>
+    <meta name="description" content="Mangalam Hospital & Trauma Centre (A Unit of JPMR Pvt. Ltd.) provides advanced 24x7 medical and emergency care in Patna.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+        <div class="container">
+            <h1 class="page-hero-title">Contact Us</h1>
+            <p class="page-hero-subtitle">We are here to help you 24/7. Reach out to us for any medical assistance.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h4 class="section-subtitle">Get In Touch</h4>
+                <h2 class="section-title">We'd Love To Hear From You</h2>
+                <p class="section-description">Fill out the form below or visit us directly at our Patna branch.</p>
+            </div>
+            
+            <div class="contact-wrapper">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--primary-dark);">Send us a Message</h3>
+                    <form onsubmit="event.preventDefault(); alert('Message sent successfully! We will contact you soon.');">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>Select Department</option>
+                                <option value="emergency">Emergency</option>
+                                <option value="opd">OPD Consultation</option>
+                                <option value="surgery">Surgery Query</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Submit Request</button>
+                    </form>
+                </div>
+
+                <!-- Map & Quick Info -->
+                <div class="contact-info-block">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--primary-dark);">Find Us Here</h3>
+                    <!-- Google Maps Embed -->
+                    <div style="width: 100%; height: 300px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 30px; box-shadow: var(--shadow-sm);">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14392.343169736852!2d85.1584!3d25.6022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58eeffffffff%3A0x8e8a6c8e3e4a2c0!2sKumhrar%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    
+                    <ul class="contact-list" style="color: var(--text-main);">
+                        <li>
+                            <i data-lucide="map-pin" style="color: var(--primary-color);"></i>
+                            <span style="font-weight: 500;">Near Shivam Petrol Pump, Opp Bapu Pariksha Parisar Kendra, Kumhrar, Patna - 26</span>
+                        </li>
+                        <li>
+                            <i data-lucide="phone-call" style="color: var(--primary-color);"></i>
+                            <span style="font-weight: 500;">Emergency: 7033930077 <br> Reception: 8873483075</span>
+                        </li>
+                        <li>
+                            <i data-lucide="mail" style="color: var(--primary-color);"></i>
+                            <span style="font-weight: 500;">hospitalmangalam73@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<div id="footer-placeholder"></div>
+
+    <script src="components.js"></script>\n    <script src="script.js"></script>
+</body>
+</html>
