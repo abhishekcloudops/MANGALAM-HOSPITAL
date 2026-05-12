@@ -36,26 +36,32 @@
                 <!-- Contact Form -->
                 <div class="contact-form">
                     <h3 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--primary-dark);">Send us a Message</h3>
-                    <form onsubmit="event.preventDefault(); alert('Message sent successfully! We will contact you soon.');">
+                    <form id="whatsapp-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Full Name" required>
+                            <input type="text" id="wa-name" class="form-control" placeholder="Your Full Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                            <input type="tel" id="wa-phone" class="form-control" placeholder="Phone Number" required>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" required>
-                                <option value="" disabled selected>Select Department</option>
-                                <option value="emergency">Emergency</option>
-                                <option value="opd">OPD Consultation</option>
-                                <option value="surgery">Surgery Query</option>
-                                <option value="other">Other Inquiry</option>
+                            <select id="wa-service" class="form-control" required>
+                                <option value="" disabled selected>Select Service / Department</option>
+                                <option value="Emergency & Critical Care">Emergency & Critical Care</option>
+                                <option value="Surgical Services">Surgical Services</option>
+                                <option value="Medical Specialists">Medical Specialists</option>
+                                <option value="Diagnostics">Diagnostics</option>
+                                <option value="Accommodations & Care">Accommodations & Care</option>
+                                <option value="Community Care">Community Care</option>
+                                <option value="General OPD Consultation">General OPD Consultation</option>
+                                <option value="Other">Other Inquiry</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="How can we help you?" required></textarea>
+                            <textarea id="wa-message" class="form-control" placeholder="How can we help you?" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Submit Request</button>
+                        <button type="submit" class="btn btn-primary w-100" style="display: flex; align-items: center; justify-content: center; gap: 8px; background-color: #25D366; color: white;">
+                            <i data-lucide="message-circle"></i> Send via WhatsApp
+                        </button>
                     </form>
                 </div>
 

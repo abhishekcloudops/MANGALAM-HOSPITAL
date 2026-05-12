@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize Doctors Filter
     initDoctorsFilter();
+
+    // Initialize WhatsApp Form
+    initWhatsAppForm();
 });
 
 function initHeader() {
@@ -133,4 +136,25 @@ function initDoctorsFilter() {
     searchInput.addEventListener('input', filterAndSort);
     categorySelect.addEventListener('change', filterAndSort);
     sortSelect.addEventListener('change', filterAndSort);
+}
+
+function initWhatsAppForm() {
+    const waForm = document.getElementById('whatsapp-form');
+    if (waForm) {
+        waForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('wa-name').value;
+            const phone = document.getElementById('wa-phone').value;
+            const service = document.getElementById('wa-service').value;
+            const message = document.getElementById('wa-message').value;
+
+            const text = `Hello Mangalam Hospital,\n\nI would like to inquire about your services.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Service/Department:* ${service}\n*Message:* ${message}`;
+            
+            const encodedText = encodeURIComponent(text);
+            const waNumber = "917033930077"; // Primary contact number for WhatsApp
+            const waUrl = `https://wa.me/${waNumber}?text=${encodedText}`;
+            
+            window.open(waUrl, '_blank');
+        });
+    }
 }
