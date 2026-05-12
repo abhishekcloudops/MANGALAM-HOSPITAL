@@ -148,7 +148,7 @@ function initWhatsAppForm() {
             const service = document.getElementById('wa-service').value;
             const message = document.getElementById('wa-message').value;
 
-            const text = `Hello Mangalam Hospital,\n\nI would like to inquire about your services.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Service/Department:* ${service}\n*Message:* ${message}`;
+            const text = `Hello Mangalam Hospital,\n\nI would like to inquire about your services.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Service/Department:* ${service}\n*Message:* ${message}\n\n_(Sent from the Mangalam Hospital Website)_`;
             
             const encodedText = encodeURIComponent(text);
             const waNumber = "917033930077"; // Primary contact number for WhatsApp

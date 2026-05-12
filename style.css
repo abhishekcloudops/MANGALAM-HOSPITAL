@@ -998,6 +998,36 @@ textarea.form-control {
     border-left: 4px solid var(--primary-color);
 }
 
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px);
+    box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+    color: #FFF;
+}
+
+.whatsapp-float i {
+    width: 32px;
+    height: 32px;
+}
+
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 992px) {
     .about-grid {
@@ -1023,21 +1053,8 @@ textarea.form-control {
 }
 
 @media (max-width: 768px) {
-    .top-bar-inner {
-        flex-direction: column;
-        gap: 8px;
-    }
-    
-    .top-bar-right {
-        gap: 5px;
-    }
-
-    .top-bar-right .divider {
+    .top-bar {
         display: none;
-    }
-
-    .contact-link {
-        margin: 0 5px;
     }
 
     .header-inner {

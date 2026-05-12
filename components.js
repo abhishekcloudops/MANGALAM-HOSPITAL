@@ -93,4 +93,9 @@ const footerHTML = `    <!-- Footer -->
             </div>
         </div>
     </footer>
+    
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital,%20I%20would%20like%20to%20inquire%20about%20your%20services.%20(Sent%20from%20website)" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i data-lucide="message-circle"></i>
+    </a>
 `;
