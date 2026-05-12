@@ -178,6 +178,8 @@ img {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .contact-link {
@@ -1026,6 +1028,35 @@ textarea.form-control {
         gap: 8px;
     }
     
+    .top-bar-right {
+        gap: 5px;
+    }
+
+    .top-bar-right .divider {
+        display: none;
+    }
+
+    .contact-link {
+        margin: 0 5px;
+    }
+
+    .header-inner {
+        height: 70px;
+    }
+
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text h1 {
+        font-size: 1.1rem;
+    }
+
+    .logo-text span {
+        font-size: 0.7rem;
+    }
+
     .mobile-menu-btn {
         display: block;
     }
@@ -1053,6 +1084,12 @@ textarea.form-control {
         text-align: center;
         gap: 16px;
     }
+
+    .main-nav .btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
     
     .hero-title {
         font-size: 2.5rem;
@@ -1079,6 +1116,12 @@ textarea.form-control {
     .about-grid,
     .contact-wrapper {
         grid-template-columns: 1fr;
+    }
+
+    .schedule-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
     }
 }
 
