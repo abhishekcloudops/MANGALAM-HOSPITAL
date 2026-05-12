@@ -1,69 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangalam Hospital & Trauma Centre | Patna</title>
-    <meta name="description" content="Mangalam Hospital & Trauma Centre (A Unit of JPMR Pvt. Ltd.) provides advanced 24x7 medical and emergency care in Patna.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
+import re
 
-<div id="header-placeholder"></div>
+with open('doctors.html', 'r') as f:
+    content = f.read()
 
-    <!-- Page Hero -->
-    <div class="page-hero">
-        <div class="container">
-            <h1 class="page-hero-title">Our Expert Doctors</h1>
-            <p class="page-hero-subtitle">Meet our dedicated team of highly qualified and experienced medical professionals.</p>
-        </div>
-    </div>
+start_tag = '<div class="doctors-grid">'
+end_tag = '            </div>\n        </div>\n    </section>'
 
-    <section class="doctors section" id="doctors">
-        <div class="container">
-            <div class="section-header text-center">
-                <h4 class="section-subtitle">Medical Team</h4>
-                <h2 class="section-title">Our Expert Doctors</h2>
-                <p class="section-description">Meet our dedicated team of highly qualified and experienced medical professionals.</p>
-            </div>
+start_idx = content.find(start_tag)
+end_idx = content.find(end_tag)
 
-            <div class="doctors-controls">
-                <div class="search-box">
-                    <i data-lucide="search"></i>
-                    <input type="text" id="doctor-search" placeholder="Search doctor name or specialty...">
-                </div>
-                <div class="filter-box">
-                    <select id="doctor-category">
-                        <option value="all">All Specialties</option>
-                        <option value="neurosurgeon">Neurology & Neurosurgery</option>
-                        <option value="orthopedic">Orthopedics</option>
-                        <option value="cardiologist">Cardiology</option>
-                        <option value="medicine">General & Internal Medicine</option>
-                        <option value="general surgeon">General Surgery</option>
-                        <option value="gynecologist">Gynecology</option>
-                        <option value="pediatrician">Pediatrics</option>
-                        <option value="nephrologist">Nephrology</option>
-                        <option value="gastroenterologist">Gastroenterology</option>
-                        <option value="urologist">Urology</option>
-                        <option value="anaesthetic">Anaesthetics</option>
-                        <option value="dentist">Dentistry</option>
-                    </select>
-                </div>
-                <div class="sort-box">
-                    <select id="doctor-sort">
-                        <option value="default">Default Order</option>
-                        <option value="az">Name (A-Z)</option>
-                        <option value="za">Name (Z-A)</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="doctors-grid">
+new_grid = '''<div class="doctors-grid">
                 <!-- Top / Highlighted Doctors -->
                 <div class="doctor-card">
                     <img class="doctor-avatar" src="assets/images/doctors/Dr%20Ravi%20Raman.jpeg" alt="Dr. Ravi Raman">
@@ -199,78 +145,7 @@
                     <p class="doctor-specialty">Dentist</p>
                     <button class="btn btn-outline-small w-100">Book Consultation</button>
                 </div>
-            </div>
-        </div>
-    </section>
+            </div>\n'''
 
-    <!-- OPD Schedule -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-header text-center">
-                <h4 class="section-subtitle">Timings</h4>
-                <h2 class="section-title">OPD Schedule</h2>
-            </div>
-            <div class="schedule-table-wrapper" style="overflow-x: auto;">
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th>Doctor Name</th>
-                            <th>Specialty</th>
-                            <th>Days Available</th>
-                            <th>Timings</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Dr. Shamsul Huda</strong></td>
-                            <td>Orthopedic</td>
-                            <td>Mon - Sat</td>
-                            <td>10:00 AM - 2:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Mukesh</strong></td>
-                            <td>Neurosurgeon</td>
-                            <td>Mon, Wed, Fri</td>
-                            <td>11:00 AM - 3:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Ravi Raman</strong></td>
-                            <td>Medicine</td>
-                            <td>Mon - Sat</td>
-                            <td>9:00 AM - 1:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Asthik</strong></td>
-                            <td>Gastroenterologist</td>
-                            <td>Tue, Thu, Sat</td>
-                            <td>4:00 PM - 7:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Ranjit</strong></td>
-                            <td>Cardiologist</td>
-                            <td>Mon - Fri</td>
-                            <td>10:00 AM - 1:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Zahra</strong></td>
-                            <td>Gynecologist</td>
-                            <td>Mon - Sat</td>
-                            <td>10:00 AM - 2:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Shahzad</strong></td>
-                            <td>General Surgeon</td>
-                            <td>Mon, Wed, Fri</td>
-                            <td>5:00 PM - 8:00 PM</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-<div id="footer-placeholder"></div>
-
-    <script src="components.js"></script>\n    <script src="script.js"></script>
-</body>
-</html>
+with open('doctors.html', 'w') as f:
+    f.write(content[:start_idx] + new_grid + content[end_idx:])

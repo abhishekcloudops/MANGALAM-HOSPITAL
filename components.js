@@ -19,7 +19,7 @@ const headerHTML = `    <!-- Top Bar -->
         <div class="container header-inner">
             <div class="logo-container">
                 <a href="index.html" class="logo-link">
-                    <div class="logo-icon"><i data-lucide="cross"></i></div>
+                    <img src="assets/images/IMG_20260511_181145.png" alt="Mangalam Hospital Logo" class="logo-img">
                     <div class="logo-text">
                         <h1>Mangalam Hospital</h1>
                         <span>A Unit of JPMR Pvt. Ltd.</span>
@@ -50,7 +50,7 @@ const footerHTML = `    <!-- Footer -->
             <div class="footer-grid">
                 <div class="footer-about">
                     <div class="logo-container mb-4">
-                        <div class="logo-icon footer-logo-icon"><i data-lucide="cross"></i></div>
+                        <img src="assets/images/IMG_20260511_181145.png" alt="Mangalam Hospital Logo" class="logo-img footer-logo-img">
                         <div class="logo-text footer-logo-text">
                             <h2>Mangalam Hospital</h2>
                             <span>A Unit of JPMR Pvt. Ltd.</span>
