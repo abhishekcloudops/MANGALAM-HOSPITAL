@@ -12,13 +12,13 @@ end_idx = content.find(end_tag)
 new_grid = '''<div class="doctors-grid">
                 <!-- Top / Highlighted Doctors -->
                 <div class="doctor-card">
-                    <img class="doctor-avatar" src="assets/images/doctors/Dr%20Ravi%20Raman.jpeg" alt="Dr. Ravi Raman">
+                    <img class="doctor-avatar" src="assets/images/doctors/Dr%20shamsul%20Hoda.jpeg" alt="Dr. Ravi Raman">
                     <h3 class="doctor-name">Dr. Ravi Raman</h3>
                     <p class="doctor-specialty">MD Medicines</p>
                     <button class="btn btn-outline-small w-100">Book Consultation</button>
                 </div>
                 <div class="doctor-card">
-                    <img class="doctor-avatar" src="assets/images/doctors/Dr%20shamsul%20Hoda.jpeg" alt="Dr. Shamsul Huda">
+                    <img class="doctor-avatar" src="assets/images/doctors/Dr%20Ravi%20Raman.jpeg" alt="Dr. Shamsul Huda">
                     <h3 class="doctor-name">Dr. Shamsul Huda</h3>
                     <p class="doctor-specialty">Orthopedic Surgeons</p>
                     <button class="btn btn-outline-small w-100">Book Consultation</button>
