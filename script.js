@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Doctors Filter
     initDoctorsFilter();
 
+    // Initialize OPD Schedule Filter
+    initOPDSchedule();
+
     // Initialize WhatsApp Form
     initWhatsAppForm();
 });
@@ -158,3 +161,56 @@ function initWhatsAppForm() {
         });
     }
 }
+
+function initOPDSchedule() {
+    const searchInput = document.getElementById('opd-search');
+    const deptSelect = document.getElementById('opd-dept');
+    const grid = document.getElementById('opd-grid');
+
+    if (!searchInput || !deptSelect || !grid) return;
+
+    const cards = Array.from(grid.querySelectorAll('.opd-card'));
+
+    function filterOPD() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const dept = deptSelect.value;
+
+        cards.forEach(card => {
+            const docName = card.dataset.doctor.toLowerCase();
+            const docSpecialty = card.dataset.specialty.toLowerCase();
+
+            const matchesSearch = docName.includes(searchTerm) || docSpecialty.includes(searchTerm);
+            
+            let matchesDept = true;
+            if (dept !== 'all') {
+                matchesDept = docSpecialty.includes(dept.toLowerCase());
+            }
+
+            if (matchesSearch && matchesDept) {
+                card.style.display = 'flex';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Show a "no results" message if no cards are visible
+        const visibleCards = cards.filter(card => card.style.display !== 'none');
+        const existingNoResults = grid.querySelector('.opd-no-results');
+        
+        if (visibleCards.length === 0) {
+            if (!existingNoResults) {
+                const noResults = document.createElement('div');
+                noResults.className = 'opd-no-results';
+                noResults.style.cssText = 'grid-column: 1 / -1; text-align: center; padding: 40px; color: #64748b; font-weight: 500;';
+                noResults.textContent = 'No OPD schedules found matching your criteria.';
+                grid.appendChild(noResults);
+            }
+        } else if (existingNoResults) {
+            existingNoResults.remove();
+        }
+    }
+
+    searchInput.addEventListener('input', filterOPD);
+    deptSelect.addEventListener('change', filterOPD);
+}
+

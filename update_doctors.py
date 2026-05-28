@@ -93,18 +93,6 @@ new_grid = '''<div class="doctors-grid">
                 </div>
                 <div class="doctor-card">
                     <div class="doctor-avatar">S</div>
-                    <h3 class="doctor-name">Dr. Shakil</h3>
-                    <p class="doctor-specialty">General Medicine</p>
-                    <button class="btn btn-outline-small w-100">Book Consultation</button>
-                </div>
-                <div class="doctor-card">
-                    <div class="doctor-avatar">SN</div>
-                    <h3 class="doctor-name">Dr. Sarosh Nayeemi</h3>
-                    <p class="doctor-specialty">Internal Medicine</p>
-                    <button class="btn btn-outline-small w-100">Book Consultation</button>
-                </div>
-                <div class="doctor-card">
-                    <div class="doctor-avatar">S</div>
                     <h3 class="doctor-name">Dr. Shahzad</h3>
                     <p class="doctor-specialty">General Surgeon</p>
                     <button class="btn btn-outline-small w-100">Book Consultation</button>

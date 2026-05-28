@@ -147,18 +147,6 @@
                 </div>
                 <div class="doctor-card">
                     <div class="doctor-avatar">S</div>
-                    <h3 class="doctor-name">Dr. Shakil</h3>
-                    <p class="doctor-specialty">General Medicine</p>
-                    <button class="btn btn-outline-small w-100">Book Consultation</button>
-                </div>
-                <div class="doctor-card">
-                    <div class="doctor-avatar">SN</div>
-                    <h3 class="doctor-name">Dr. Sarosh Nayeemi</h3>
-                    <p class="doctor-specialty">Internal Medicine</p>
-                    <button class="btn btn-outline-small w-100">Book Consultation</button>
-                </div>
-                <div class="doctor-card">
-                    <div class="doctor-avatar">S</div>
                     <h3 class="doctor-name">Dr. Shahzad</h3>
                     <p class="doctor-specialty">General Surgeon</p>
                     <button class="btn btn-outline-small w-100">Book Consultation</button>
@@ -200,6 +188,7 @@
                     <button class="btn btn-outline-small w-100">Book Consultation</button>
                 </div>
             </div>
+            </div>
         </div>
     </section>
 
@@ -209,62 +198,393 @@
             <div class="section-header text-center">
                 <h4 class="section-subtitle">Timings</h4>
                 <h2 class="section-title">OPD Schedule</h2>
+                <p class="section-description">We offer detailed, specialized OPD consultations. Search by doctor's name or filter by department below.</p>
             </div>
-            <div class="schedule-table-wrapper" style="overflow-x: auto;">
-                <table class="schedule-table">
-                    <thead>
-                        <tr>
-                            <th>Doctor Name</th>
-                            <th>Specialty</th>
-                            <th>Days Available</th>
-                            <th>Timings</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Dr. Shamsul Huda</strong></td>
-                            <td>Orthopedic</td>
-                            <td>Mon - Sat</td>
-                            <td>10:00 AM - 2:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Mukesh</strong></td>
-                            <td>Neurosurgeon</td>
-                            <td>Mon, Wed, Fri</td>
-                            <td>11:00 AM - 3:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Ravi Raman</strong></td>
-                            <td>Medicine</td>
-                            <td>Mon - Sat</td>
-                            <td>9:00 AM - 1:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Asthik</strong></td>
-                            <td>Gastroenterologist</td>
-                            <td>Tue, Thu, Sat</td>
-                            <td>4:00 PM - 7:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Ranjit</strong></td>
-                            <td>Cardiologist</td>
-                            <td>Mon - Fri</td>
-                            <td>10:00 AM - 1:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Zahra</strong></td>
-                            <td>Gynecologist</td>
-                            <td>Mon - Sat</td>
-                            <td>10:00 AM - 2:00 PM</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Dr. Shahzad</strong></td>
-                            <td>General Surgeon</td>
-                            <td>Mon, Wed, Fri</td>
-                            <td>5:00 PM - 8:00 PM</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+            <!-- OPD Search and Filter -->
+            <div class="opd-controls">
+                <div class="search-box">
+                    <i data-lucide="search"></i>
+                    <input type="text" id="opd-search" placeholder="Search doctor or specialty...">
+                </div>
+                <div class="filter-box">
+                    <select id="opd-dept">
+                        <option value="all">All Specialties</option>
+                        <option value="Nephrologist">Nephrology</option>
+                        <option value="Urologist">Urology</option>
+                        <option value="Orthopedic">Orthopedics</option>
+                        <option value="Neurosurgeon">Neurosurgery</option>
+                        <option value="Medicine">General Medicine</option>
+                        <option value="Gastroenterologist">Gastroenterology</option>
+                        <option value="Cardiologist">Cardiology</option>
+                        <option value="Gynecologist">Gynecology</option>
+                        <option value="General Surgeon">General Surgery</option>
+                        <option value="Pediatrician">Pediatrics</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- OPD Cards Grid -->
+            <div class="opd-grid" id="opd-grid">
+                <!-- Card 1: Dr. R.A. Khan -->
+                <div class="opd-card" data-doctor="Dr. R.A. Khan" data-specialty="Nephrologist">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">RK</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. R.A. Khan</h3>
+                                <span class="opd-card-badge">Nephrologist</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon, Wed, Fri</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">07:00 PM - 09:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20R.A.%20Khan%20(Nephrologist)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 2: Dr. Shashi Dharan -->
+                <div class="opd-card" data-doctor="Dr. Shashi Dharan" data-specialty="Urologist">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">SD</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Shashi Dharan</h3>
+                                <span class="opd-card-badge">Urologist</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Tue, Thu, Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">06:00 PM - 08:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Shashi%20Dharan%20(Urologist)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 3: Dr. Shamsul Huda -->
+                <div class="opd-card" data-doctor="Dr. Shamsul Huda" data-specialty="Orthopedic">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">SH</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Shamsul Huda</h3>
+                                <span class="opd-card-badge">Orthopedic</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon - Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">12:00 PM - 02:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Shamsul%20Huda%20(Orthopedic)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 4: Dr. Mukesh -->
+                <div class="opd-card" data-doctor="Dr. Mukesh" data-specialty="Neurosurgeon">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">M</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Mukesh</h3>
+                                <span class="opd-card-badge">Neurosurgeon</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon, Wed, Fri</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">06:00 PM - 08:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Mukesh%20(Neurosurgeon)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 5: Dr. Ravi Raman -->
+                <div class="opd-card" data-doctor="Dr. Ravi Raman" data-specialty="Medicine">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">RR</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Ravi Raman</h3>
+                                <span class="opd-card-badge">MD Medicine</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon - Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">05:00 PM - 07:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Ravi%20Raman%20(MD%20Medicine)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 6: Dr. Asthik -->
+                <div class="opd-card" data-doctor="Dr. Asthik" data-specialty="Gastroenterologist">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">A</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Asthik</h3>
+                                <span class="opd-card-badge">Gastroenterologist</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Tue, Thu, Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">12:00 PM - 02:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Asthik%20(Gastroenterologist)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 7: Dr. Ranjit -->
+                <div class="opd-card" data-doctor="Dr. Ranjit" data-specialty="Cardiologist">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">R</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Ranjit</h3>
+                                <span class="opd-card-badge">Cardiologist</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon - Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">07:00 AM - 02:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Ranjit%20(Cardiologist)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 8: Dr. Zahra -->
+                <div class="opd-card" data-doctor="Dr. Zahra" data-specialty="Gynecologist">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">Z</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Zahra</h3>
+                                <span class="opd-card-badge">Gynecologist</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon - Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">11:00 AM - 02:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Zahra%20(Gynecologist)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 9: Dr. Shahzad -->
+                <div class="opd-card" data-doctor="Dr. Shahzad" data-specialty="General Surgeon">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">S</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Shahzad</h3>
+                                <span class="opd-card-badge">General Surgeon</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon, Wed, Fri</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">12:00 PM - 03:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Shahzad%20(General%20Surgeon)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 10: Dr. Athar Numani -->
+                <div class="opd-card" data-doctor="Dr. Athar Numani" data-specialty="General Surgeon">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">AN</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Athar Numani</h3>
+                                <span class="opd-card-badge">General Surgeon</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon - Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">02:00 PM - 05:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Athar%20Numani%20(General%20Surgeon)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 11: Dr. Anil (Neurosurgeon) -->
+                <div class="opd-card" data-doctor="Dr. Anil" data-specialty="Neurosurgeon">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">A</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Anil</h3>
+                                <span class="opd-card-badge">Neurosurgeon</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Tue, Thu, Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">03:00 PM - 05:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Anil%20(Neurosurgeon)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 12: Dr. Nirmal -->
+                <div class="opd-card" data-doctor="Dr. Nirmal" data-specialty="General Surgeon">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">N</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Nirmal</h3>
+                                <span class="opd-card-badge">General Surgeon</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon - Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">04:00 PM - 06:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Nirmal%20(General%20Surgeon)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 13: Dr. Ashutosh -->
+                <div class="opd-card" data-doctor="Dr. Ashutosh" data-specialty="Cardiologist">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">A</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Ashutosh</h3>
+                                <span class="opd-card-badge">Cardiologist</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon, Wed, Fri</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">03:00 PM - 05:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Ashutosh%20(Cardiologist)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 14: Dr. Shashi (Urologist) -->
+                <div class="opd-card" data-doctor="Dr. Shashi" data-specialty="Urologist">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">S</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Shashi</h3>
+                                <span class="opd-card-badge">Urologist</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Tue, Thu, Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">04:00 PM - 06:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Shashi%20(Urologist)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
+
+                <!-- Card 15: Dr. Arpit -->
+                <div class="opd-card" data-doctor="Dr. Arpit" data-specialty="Pediatrician">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div class="opd-card-avatar">A</div>
+                            <div>
+                                <h3 class="doctor-name" style="font-size: 1.15rem; font-weight: 700; color: var(--primary-dark); margin: 0;">Dr. Arpit</h3>
+                                <span class="opd-card-badge">Pediatrician</span>
+                            </div>
+                        </div>
+                        <div class="opd-card-info">
+                            <div class="opd-card-info-item">
+                                <i data-lucide="calendar"></i>
+                                <span>Mon - Sat</span>
+                            </div>
+                            <div class="opd-card-info-item">
+                                <i data-lucide="clock"></i>
+                                <span class="time-highlight">05:00 PM - 08:00 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/917033930077?text=Hello%20Mangalam%20Hospital%2C%20I%20would%20like%20to%20book%20an%20appointment%20with%20Dr.%20Arpit%20(Pediatrician)." target="_blank" class="btn btn-outline-small w-100" style="text-align: center; font-size: 0.85rem; padding: 10px 0; justify-content: center; display: inline-flex; align-items: center; gap: 6px;"><i data-lucide="phone" style="width: 14px; height: 14px;"></i> Book Appointment</a>
+                </div>
             </div>
         </div>
     </section>

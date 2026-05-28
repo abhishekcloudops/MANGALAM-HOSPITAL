@@ -1176,3 +1176,97 @@ textarea.form-control {
         padding: 20px 15px;
     }
 }
+
+/* ===== OPD SCHEDULE SECTION ===== */
+.opd-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.opd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.opd-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.opd-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.opd-card-avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(11, 92, 102, 0.15);
+}
+
+.opd-card-badge {
+    background: rgba(11, 92, 102, 0.08);
+    color: var(--primary-color);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.opd-card-info {
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.opd-card-info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.opd-card-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.opd-card-info-item i {
+    color: var(--secondary-color);
+    width: 16px;
+    height: 16px;
+}
+
+.opd-card-info-item span.time-highlight {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
