@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize WhatsApp Form
     initWhatsAppForm();
+
+    // Initialize Announcement Modal
+    initAnnouncementModal();
 });
 
 function initHeader() {
@@ -212,5 +215,38 @@ function initOPDSchedule() {
 
     searchInput.addEventListener('input', filterOPD);
     deptSelect.addEventListener('change', filterOPD);
+}
+
+function initAnnouncementModal() {
+    const modal = document.getElementById('announcement-modal');
+    const closeBtn = document.getElementById('modal-close-btn');
+
+    if (!modal) return;
+
+    // Show modal after a small delay on page load (1.2 seconds)
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 1200);
+
+    // Close modal when close button is clicked
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+        });
+    }
+
+    // Close modal when clicking outside the container
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('show');
+        }
+    });
+
+    // Close modal on Escape key press
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            modal.classList.remove('show');
+        }
+    });
 }
 
