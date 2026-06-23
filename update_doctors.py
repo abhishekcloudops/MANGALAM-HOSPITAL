@@ -62,7 +62,7 @@ new_grid = '''<div class="doctors-grid">
 
                 <!-- Other Specialists -->
                 <div class="doctor-card">
-                    <div class="doctor-avatar">A</div>
+                    <img class="doctor-avatar" src="assets/images/doctors/Dr%20anil%20neurologist.png" alt="Dr. Anil">
                     <h3 class="doctor-name">Dr. Anil</h3>
                     <p class="doctor-specialty">Neurosurgeon</p>
                     <button class="btn btn-outline-small w-100">Book Consultation</button>
@@ -110,7 +110,7 @@ new_grid = '''<div class="doctors-grid">
                     <button class="btn btn-outline-small w-100">Book Consultation</button>
                 </div>
                 <div class="doctor-card">
-                    <div class="doctor-avatar">RK</div>
+                    <img class="doctor-avatar" src="assets/images/doctors/Dr%20r%20a%20khan.jpeg" alt="Dr. R.A Khan">
                     <h3 class="doctor-name">Dr. R.A Khan</h3>
                     <p class="doctor-specialty">Nephrologist</p>
                     <button class="btn btn-outline-small w-100">Book Consultation</button>
